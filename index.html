@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>المحاماة الشرعية – معلومات قانونية</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3ecdc;--card:#fffdf7;--ink:#2a2118;--mute:#7a6c58;--acc:#5b1a2a;--gold:#a8812c;--line:#d9ccae;--navy:#14243a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16130f;--card:#201b15;--ink:#efe6d3;--mute:#a89a82;--acc:#d98a9a;--gold:#d4ad55;--line:#3a3226;--navy:#0d1624;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#16130f;--card:#201b15;--ink:#efe6d3;--mute:#a89a82;--acc:#d98a9a;--gold:#d4ad55;--line:#3a3226;--navy:#0d1624;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Naskh Arabic',Tahoma,serif;font-size:17px;line-height:1.9}
+h1,h2,h3{font-family:Amiri,'Noto Naskh Arabic',serif;margin:0}
+.hero{background:var(--navy);color:#f3ecdc;padding:34px 16px 30px;text-align:center;border-bottom:5px double var(--gold)}
+.photo{width:136px;height:136px;border-radius:50%;margin:0 auto 12px;border:3px solid var(--gold);outline:1px solid var(--gold);outline-offset:5px;background:#ffffff14 center/cover;display:flex;align-items:center;justify-content:center;font-size:13px;overflow:hidden}
+.hero h1{font-size:34px;color:#fff}.hero p{margin:2px 0 14px;color:#d9ccae}
+.call{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:5px 24px;text-decoration:none;direction:ltr;font-weight:600;letter-spacing:1px}
+nav{display:flex;justify-content:center;gap:6px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+nav button{background:none;border:0;border-bottom:3px solid transparent;font:inherit;font-family:Amiri,serif;font-size:19px;color:var(--mute);padding:8px 22px;cursor:pointer}
+nav button.on{color:var(--acc);border-color:var(--gold);font-weight:700}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:10}
+main{max-width:740px;margin:22px auto 30px;padding:0 14px}
+.card{background:var(--card);border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;padding:20px 22px;margin-bottom:18px}
+.card h2{font-size:23px;color:var(--acc);border-bottom:1px solid var(--gold);padding-bottom:4px;margin-bottom:6px}
+.meta{color:var(--mute);font-size:13px}
+.body{white-space:pre-wrap;margin:10px 0}
+.bar{display:flex;gap:6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:4px 0;margin:10px 0}
+.bar button{flex:1}
+input,textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:7px 10px;margin-bottom:8px}
+textarea{min-height:76px;resize:vertical}
+button{font:inherit;font-size:15px;background:var(--acc);color:#fff;border:0;padding:5px 18px;cursor:pointer}
+button.ghost{background:none;color:var(--mute);padding:2px 10px}
+button.liked{color:var(--acc);font-weight:700}
+.cm{border-top:1px dotted var(--line);padding:6px 0;font-size:15px}.cm b{color:var(--navy)}
+@media (prefers-color-scheme:dark){.cm b{color:var(--gold)}}
+.file{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.empty{text-align:center;color:var(--mute);padding:26px}
+footer{text-align:center;color:var(--mute);font-size:13px;padding:0 14px 26px}
+.own{display:none}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="photo" id="photo">ضع صورتك هنا</div>
+  <h1 id="name">اسمك هنا</h1>
+  <p id="title">محامٍ شرعي – استشارات ومعلومات قانونية</p>
+  <a class="call" id="phone" href="#">رقم الهاتف</a>
+  <div style="margin-top:8px"><a id="email" href="#" style="color:#d9ccae;direction:ltr;display:inline-block;font-size:15px;text-decoration:none">البريد الإلكتروني</a></div>
+  <div class="own" id="ownerbar" style="margin-top:12px">
+    <button class="ghost" style="color:#fff" onclick="editProfile()">✏️ تعديل البيانات</button>
+    <button class="ghost" style="color:#fff" onclick="upl.click()">🖼️ تغيير الصورة</button>
+    <input type="file" id="upl" accept="image/*" hidden>
+  </div>
+</header>
+<nav><button id="t1" class="on" onclick="tab(1)">المنشورات</button><button id="t2" onclick="tab(2)">المكتبة (PDF)</button></nav>
+<main>
+  <div id="v1">
+    <section class="card own" id="composer"><h2>منشور جديد</h2>
+      <input id="pt" placeholder="عنوان المنشور"><textarea id="pb" placeholder="اكتب المعلومة القانونية هنا..."></textarea>
+      <button onclick="addPost()">نشر</button></section>
+    <div id="feed"><div class="empty">جارٍ التحميل...</div></div>
+  </div>
+  <div id="v2" style="display:none">
+    <section class="card own" id="fup"><h2>رفع ملف PDF</h2>
+      <input id="ft" placeholder="عنوان الملف"><input type="file" id="ff" accept="application/pdf">
+      <button id="fb" onclick="addFile()">رفع</button></section>
+    <div id="lib"></div>
+  </div>
+</main>
+<footer>المعلومات الواردة للتوعية العامة ولا تغني عن استشارة قانونية مباشرة.</footer>
+<script>
+let db=null,owner=false,uid=null,posts=[],comments={},likes={},files=[],profile={},drafts={};
+const $=id=>document.getElementById(id);
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const fmt=t=>t?new Date(t).toLocaleDateString('ar',{year:'numeric',month:'long',day:'numeric'}):'';
+function tab(n){$('v1').style.display=n==1?'':'none';$('v2').style.display=n==2?'':'none';$('t1').className=n==1?'on':'';$('t2').className=n==2?'on':''}
+function renderProfile(){
+  $('name').textContent=profile.name||'اسمك هنا';
+  if(profile.title)$('title').textContent=profile.title;
+  const p=$('phone');p.textContent=profile.phone||'رقم الهاتف';p.href=profile.phone?'tel:'+profile.phone:'#';
+  const m=$('email');m.textContent=profile.email||'البريد الإلكتروني';m.href=profile.email?'mailto:'+profile.email:'#';
+  if(profile.photo){$('photo').style.backgroundImage='url(/_blob/'+profile.photo+')';$('photo').textContent=''}
+}
+async function share(p){
+  const url=location.href,text=p.title+' – '+(profile.name||'');
+  try{if(navigator.share){await navigator.share({title:p.title,text,url});return}}catch(e){return}
+  try{await navigator.clipboard.writeText(url);alert('تم نسخ الرابط')}catch(e){prompt('انسخ الرابط:',url)}
+}
+async function toggleLike(p){
+  const r=db.doc('likes/'+p.id+'_'+uid),has=(likes[p.id]||[]).includes(uid);
+  try{has?await r.delete():await r.set({postId:p.id,uid})}catch(e){}
+}
+function render(){
+  if(document.activeElement&&document.activeElement.closest&&document.activeElement.closest('#feed')&&document.activeElement.tagName=='TEXTAREA'&&0)return;
+  const f=$('feed');f.textContent='';
+  if(!posts.length){f.append(el('div','empty','لا توجد منشورات بعد.'));return}
+  posts.forEach(p=>{
+    const c=el('article','card');
+    c.append(el('h2',0,p.title),el('div','meta',fmt(p.ts)),el('div','body',p.body));
+    const ls=likes[p.id]||[],cs=comments[p.id]||[];
+    const bar=el('div','bar');
+    const lb=el('button','ghost'+(ls.includes(uid)?' liked':''),(ls.includes(uid)?'♥ ':'♡ ')+'إعجاب ('+ls.length+')');
+    if(uid)lb.onclick=()=>toggleLike(p);else lb.disabled=true;
+    const sb=el('button','ghost','↗ مشاركة');sb.onclick=()=>share(p);
+    bar.append(lb,el('button','ghost','💬 '+cs.length),sb);bar.children[1].disabled=true;c.append(bar);
+    if(owner){const d=el('button','ghost','حذف المنشور');d.onclick=()=>confirm('حذف المنشور؟')&&db.doc('posts/'+p.id).delete();c.append(d)}
+    cs.forEach(x=>{
+      const r=el('div','cm');r.append(el('b',0,x.author||'زائر'),el('div',0,x.text));
+      if(owner){const d=el('button','ghost','حذف');d.onclick=()=>db.doc('comments/'+x.id).delete();r.append(d)}
+      c.append(r);
+    });
+    if(db){
+      const a=el('input');a.placeholder='اسمك';a.maxLength=40;a.value=drafts['n']||'';a.oninput=()=>drafts['n']=a.value;
+      const ta=el('textarea');ta.placeholder='اكتب تعليقك...';ta.maxLength=1000;ta.value=drafts[p.id]||'';ta.oninput=()=>drafts[p.id]=ta.value;
+      const s=el('button',0,'إرسال التعليق');
+      s.onclick=async()=>{
+        const v=ta.value.trim();if(!v)return;s.disabled=true;
+        try{await db.collection('comments').add({postId:p.id,author:a.value.trim()||'زائر',text:v,ts:Date.now()});drafts[p.id]='';ta.value=''}catch(e){alert('تعذر إرسال التعليق.')}
+        s.disabled=false;
+      };
+      c.append(a,ta,s);
+    }
+    f.append(c);
+  });
+}
+function renderLib(){
+  const l=$('lib');l.textContent='';
+  if(!files.length){l.append(el('div','empty','لا توجد ملفات بعد.'));return}
+  files.forEach(x=>{
+    const c=el('div','card file'),i=el('div');i.append(el('h2',0,'📄 '+x.title),el('div','meta',fmt(x.ts)));
+    const b=el('button',0,'تنزيل');
+    b.onclick=async()=>{
+      try{const d=await claude.use('downloads');const r=await fetch('/_blob/'+x.blob);await d.save({filename:(x.title||'file')+'.pdf',data:await r.blob()})}
+      catch(e){window.open('/_blob/'+x.blob,'_blank')}
+    };
+    c.append(i,b);
+    if(owner){const d=el('button','ghost','حذف');d.onclick=()=>confirm('حذف الملف؟')&&db.doc('files/'+x.id).delete();c.append(d)}
+    l.append(c);
+  });
+}
+async function addPost(){
+  const t=$('pt').value.trim(),b=$('pb').value.trim();if(!t||!b)return;
+  try{await db.collection('posts').add({title:t,body:b,ts:Date.now()});$('pt').value='';$('pb').value=''}catch(e){alert('تعذر النشر.')}
+}
+async function addFile(){
+  const t=$('ft').value.trim(),f=$('ff').files[0];if(!t||!f){alert('أدخل العنوان واختر ملف PDF');return}
+  $('fb').disabled=true;
+  try{const as=await claude.use('assets');const r=await as.upload(f);await db.collection('files').add({title:t,blob:r.id,ts:Date.now()});$('ft').value='';$('ff').value=''}
+  catch(e){alert('تعذر رفع الملف.')}
+  $('fb').disabled=false;
+}
+function editProfile(){
+  const name=prompt('الاسم:',profile.name||'');if(name===null)return;
+  const title=prompt('المسمى:',profile.title||'');if(title===null)return;
+  const phone=prompt('رقم الهاتف:',profile.phone||'');if(phone===null)return;
+  const email=prompt('البريد الإلكتروني:',profile.email||'');if(email===null)return;
+  db.doc('profile/main').set({...profile,name,title,phone,email});
+}
+$('upl').onchange=async e=>{
+  const f=e.target.files[0];if(!f)return;
+  try{const as=await claude.use('assets');const r=await as.upload(f);await db.doc('profile/main').set({...profile,photo:r.id})}catch(err){alert('تعذر رفع الصورة.')}
+};
+(async()=>{
+  try{const u=await claude.use('user');if(u){owner=await u.isOwner();uid=await u.id()}db=await claude.use('db')}catch(e){}
+  if(owner)document.querySelectorAll('.own').forEach(x=>x.style.display='block');
+  if(!db){$('feed').textContent='';$('feed').append(el('div','empty','يرجى تسجيل الدخول لعرض المحتوى.'));return}
+  db.doc('profile/main').onSnapshot(s=>{profile=s.data()||{};renderProfile()});
+  db.collection('posts').orderBy('ts','desc').onSnapshot(s=>{posts=s.docs.map(d=>({id:d.id,...d.data()}));render()});
+  db.collection('comments').orderBy('ts','asc').onSnapshot(s=>{comments={};s.docs.forEach(d=>{const x={id:d.id,...d.data()};(comments[x.postId]=comments[x.postId]||[]).push(x)});render()});
+  db.collection('likes').onSnapshot(s=>{likes={};s.docs.forEach(d=>{const x=d.data();(likes[x.postId]=likes[x.postId]||[]).push(x.uid)});render()});
+  db.collection('files').orderBy('ts','desc').onSnapshot(s=>{files=s.docs.map(d=>({id:d.id,...d.data()}));renderLib()});
+})();
+</script>
+</body>
+</html>
